@@ -42,7 +42,7 @@ echo
 
 set +x
 
-sudo apt-get install unzip vim curl wget build-essential python-software-properties software-properties-common
+sudo apt-get install unzip vim curl git-core wget build-essential python-software-properties software-properties-common
 
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449
 sudo add-apt-repository "deb http://dl.hhvm.com/ubuntu $(lsb_release -sc) main"
@@ -51,9 +51,7 @@ wget http://nginx.org/keys/nginx_signing.key
 sudo apt-key add nginx_signing.key
 
 sudo apt-get -qq update
-sudo apt-get install \
-  $GIT mariadb-server nginx dpkg-dev \
-  hhvm
+sudo apt-get install mariadb-server nginx dpkg-dev hhvm
 
 sudo /usr/share/hhvm/install_fastcgi.sh
 sudo update-rc.d hhvm defaults
